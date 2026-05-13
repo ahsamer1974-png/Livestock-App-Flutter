@@ -8,7 +8,7 @@ import '../../../favorites/presentation/pages/favorites_page.dart';
 import 'package:livestock_marketplace_app/features/listings/presentation/pages/add_listing_page.dart';
 import 'package:livestock_marketplace_app/features/listings/presentation/pages/my_listings_page.dart';
 import 'package:livestock_marketplace_app/features/auth/presentation/pages/edit_profile_page.dart';
-
+import 'package:livestock_marketplace_app/features/drivers/presentation/pages/drivers_page.dart';
 // --- 🚚 استيرادات ميزة الطلبات والتوصيل الجديدة ---
 // import 'package:livestock_marketplace_app/features/transport/presentation/pages/my_orders_page.dart';
 // import 'package:livestock_marketplace_app/features/transport/presentation/pages/incoming_orders_page.dart';
@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _pages = [
     const HomeTab(),
+    const DriversPage(),
     const MessagesTab(),
     const FavoritesTab(),
     const SettingsTab(),
@@ -47,10 +48,30 @@ class _HomePageState extends State<HomePage> {
           selectedItemColor: AppColors.primary,
           unselectedItemColor: Colors.grey,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'الرئيسية'),
-            BottomNavigationBarItem(icon: Icon(Icons.message), label: 'الرسائل'),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'المفضلة'),
-            BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'الإعدادات'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'الرئيسية',
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_shipping),
+              label: 'tran sport',
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.message),
+              label: 'الرسائل',
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite),
+              label: 'المفضلة',
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'الإعدادات',
+            ),
           ],
         ),
       ),

@@ -47,6 +47,9 @@ import 'features/transport/domain/usecases/get_incoming_orders_usecase.dart';
 import 'features/transport/domain/usecases/start_delivery_usecase.dart';
 import 'features/transport/presentation/controllers/transport_controller.dart';
 
+import 'features/drivers/data/datasources/drivers_remote_data_source.dart';
+import 'features/drivers/presentation/controllers/drivers_controller.dart';
+
 final sl = GetIt.instance; // sl = Service Locator
 
 Future<void> init() async {
@@ -67,6 +70,15 @@ Future<void> init() async {
 
   sl.registerLazySingleton<AuthRemoteDataSource>(
         () => AuthRemoteDataSourceImpl(client: sl()),
+  );
+
+  sl.registerFactory(() => DriversController(
+    remoteDataSource: sl(),
+    sharedPreferences: sl(),
+  ));
+
+  sl.registerLazySingleton(
+        () => DriversRemoteDataSource(client: sl()),
   );
 
   // =========================================================

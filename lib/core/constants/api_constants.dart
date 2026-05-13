@@ -5,6 +5,9 @@ class ApiConstants {
   // ==================== الإعلانات ====================
   static const String listings = "$baseUrl/ListingsApi";
 
+  // ==================== السائقين ====================
+  static const String drivers = "$baseUrl/DriversApi";
+
   // ==================== المستخدمين ====================
   static const String login = "$baseUrl/SettingsApi/Login";
   static const String register = "$baseUrl/SettingsApi/Register";

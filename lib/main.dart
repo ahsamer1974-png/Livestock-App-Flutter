@@ -24,6 +24,10 @@ import 'features/favorites/presentation/pages/favorites_page.dart';
 // 🚚 استيراد كنترولر التوصيل (Transport)
 import 'features/transport/presentation/controllers/transport_controller.dart';
 
+import 'features/drivers/presentation/controllers/drivers_controller.dart';
+import 'features/drivers/presentation/pages/drivers_page.dart';
+import 'features/drivers/presentation/pages/add_driver_page.dart';
+
 // حل مشكلة شهادات الأمان (HTTPS) للمحاكي
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -87,6 +91,7 @@ class HalalMarketApp extends StatelessWidget {
             Get.put(di.sl<ListingsController>());
             Get.put(di.sl<MessagesController>());
             Get.put(di.sl<FavoritesController>());
+            Get.put(di.sl<DriversController>());
             // 🚚 إضافة كنترولر التوصيل هنا ليعمل في كامل التطبيق
             Get.put(di.sl<TransportController>());
           }),
@@ -98,6 +103,14 @@ class HalalMarketApp extends StatelessWidget {
         GetPage(
           name: '/chat',
           page: () => const ChatPage(),
+        ),
+        GetPage(
+          name: '/drivers',
+          page: () => const DriversPage(),
+        ),
+        GetPage(
+          name: '/add-driver',
+          page: () => const AddDriverPage(),
         ),
       ],
     );
